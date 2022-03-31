@@ -9,8 +9,9 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start-prod": "NODE_ENV=production node ./src/server.js",
-        "start-dev": "SET NODE_ENV=development&&nodemon ./src/server.js",
-        "lint": "eslint ./src"
+        "start-dev": "nodemon ./src/server.js",
+        "lint": "eslint ./src",
+        "migrate": "node-pg-migrate"
     },
     "author": "",
     "license": "ISC",
@@ -29,7 +30,10 @@
     "dependencies": {
         "@hapi/hapi": "^20.1.2",
         "@types/node": "^17.0.23",
+        "dotenv": "^16.0.0",
         "joi": "^17.6.0",
-        "nanoid": "^3.1.22"
+        "nanoid": "^3.1.22",
+        "node-pg-migrate": "^6.2.1",
+        "pg": "^8.7.3"
     }
 }
