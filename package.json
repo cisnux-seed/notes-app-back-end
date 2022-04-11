@@ -30,7 +30,9 @@
     "dependencies": {
         "@hapi/hapi": "^20.1.2",
         "@types/node": "^17.0.23",
+        "bcrypt": "^5.0.1",
         "dotenv": "^16.0.0",
+        "eslint-config-airbnb": "^19.0.4",
         "joi": "^17.6.0",
         "nanoid": "^3.1.22",
         "node-pg-migrate": "^6.2.1",
