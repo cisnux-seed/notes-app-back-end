@@ -9,6 +9,12 @@ const notes = require('./api/notes');
 const NotesService = require('./services/postgres/NotesService');
 const NotesValidator = require('./validator/notes');
 
+// exports
+// used '_' to avoid duplicate variable from node global variables
+const _exports = require('./api/exports');
+const ProducerService = require('./services/rabbitmq/ProducerService');
+const ExportsValidator = require('./validator/export');
+
 // users
 const users = require('./api/users');
 const UsersService = require('./services/postgres/UsersService');
@@ -92,6 +98,13 @@ const init = async () => {
         collaborationsService,
         notesService,
         validator: CollaborationsValidator,
+      },
+    },
+    {
+      plugin: _exports,
+      options: {
+        service: ProducerService,
+        validator: ExportsValidator,
       },
     },
   ]);
