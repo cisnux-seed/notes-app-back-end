@@ -4,7 +4,11 @@ class CacheService {
   #client;
 
   constructor() {
-    this.#client = redis.createClient();
+    this.#client = redis.createClient({
+      socket: {
+        host: process.env.REDIS_SERVER,
+      },
+    });
 
     this.#client.on('error', (error) => {
       console.error(error);
